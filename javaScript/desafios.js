@@ -89,3 +89,134 @@ for (let i = 1; i <= numero; i++) {
   document.write(i);
 }
 */
+
+// Hacer un programa que pregunte al usuario si desea continuar, en caso de SÍ repetir pregunta, en caso de NO despedirse con un "Chao!"
+/* let confirmacion = "";
+do {
+  confirmacion = prompt("¿Desea Continuar?");
+} while (
+  confirmacion === "si" ||
+  confirmacion === "sí" ||
+  confirmacion === "SI" ||
+  confirmacion === "SÍ" ||
+  confirmacion === "sI" ||
+  confirmacion === "sÍ"
+);
+document.write(" Chao!");
+*/
+/* let confirmacion = null;
+do {
+  confirmacion = confirm("¿Desea Continuar?");
+} while (confirmacion);
+document.write("Chao!");
+*/
+
+// Mostrar los días de la semana
+/* let semana = [
+  "Lunes",
+  "Martes",
+  "Miércoles",
+  "Jueves",
+  "Viernes",
+  "Sábado",
+  "Domingo",
+];
+for (let i = 0; i < semana.length; i++) {
+  document.write(semana[i] + " ");
+}
+*/
+
+// Pida un # y muestre los números pares desde 1 hasta el # ingresado
+/* const ingresado = parseInt(prompt("Dame un número y te devolveré sus pares"));
+
+for (let i = 1; i <= ingresado; i++) {
+  if (i % 2 === 0) {
+    document.write(i + " ");
+  }
+}
+*/
+
+/* FALTAAA // Recibir un # de 0 a 6 unicamente y retornar el día - semana correspondiente.
+const semana = [
+  "Domingo",
+  "Lunes",
+  "Martes",
+  "Miércoles",
+  "Jueves",
+  "Viernes",
+  "Sábado",
+];
+
+// Solicitar un día de la semana y retornar el nombre de ese día en Inglés.
+*/
+
+/* //Saluar por nombre, si no hay decir 'Hola, desconocido', en una función
+
+const aaa = 0;
+function saludo(nombre, apellido) {
+  if (
+    nombre == undefined ||
+    nombre === " " ||
+    apellido == undefined ||
+    apellido === " "
+  ) {
+    document.write("Hola desconocido");
+  } else {
+    document.write("Hola " + nombre + " " + apellido + "!");
+  }
+}
+const nombreUsuario = prompt("Dame tu nombre");
+const apellidoUsuario = prompt("Dame tu apellido");
+
+saludo(nombreUsuario, apellidoUsuario);
+*/
+
+// Botón para sumar y btn para restar, mostrar resultado
+const d = document;
+// Linkeo el div del body
+const $root = d.getElementById("root");
+
+// Creo las constantes de cada elemento en JS según su Etiqueta <X>
+const $h1 = d.createElement("h1");
+const $p = d.createElement("p");
+const $btnSuma = d.createElement("button");
+const $btnResta = d.createElement("button");
+let contadorDeClicks = 0;
+
+// Creo el elemento en el viewPort
+$root.appendChild($h1);
+$root.appendChild($p);
+$root.appendChild($btnSuma);
+$root.appendChild($btnResta);
+
+// Dar estilos -css
+$root.style.backgroundColor = "#0f0";
+
+// Le doy contenido a cada elemento creado
+$h1.textContent = "Manipulación del DOM";
+$p.textContent = contadorDeClicks;
+$btnSuma.textContent = "+";
+$btnResta.textContent = "-";
+
+// Funcionalidad botones
+$btnSuma.addEventListener("click", () => {
+  contadorDeClicks++;
+  $p.textContent = contadorDeClicks;
+  if (contadorDeClicks === 3) {
+    $h1.style.display = "none"; // Ocultar en 3 -css
+  }
+  if (contadorDeClicks === 5) {
+    $h1.style.display = ""; // Mostrar en 5 -css
+  }
+  if (contadorDeClicks === 7) {
+    $h1.remove(); // Eliminar en 7 -js
+  }
+});
+
+$btnResta.addEventListener("click", () => {
+  contadorDeClicks--;
+  $p.textContent = contadorDeClicks;
+  if (contadorDeClicks === 2) {
+    $h1.style.display = ""; // Mostrar en 2 -css
+  }
+});
