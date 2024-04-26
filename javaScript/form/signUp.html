@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>signUp</title>
+    <link rel="stylesheet" href="./vanilla/css/main.css" />
   </head>
   <body>
     <nav>
       <a href="./index.html">Home</a>
     </nav>
     <main>
-      <form id="signUp">
+      <form id="signUp" autocomplete="off">
         <fieldset>
           <label>Name<input type="text" id="name" name="name" /></label>
 
@@ -19,18 +20,20 @@
           <label
             >Password<input type="password" id="password" name="password"
           /></label>
+          <label>Age<input type="number" id="age" name="age" /></label>
 
-          <label
-            >Confirm Password<input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-          /></label>
+          <select name="Country" id="country">
+            <option value="">–</option>
+            <option value="colombia">Colombia</option>
+            <option value="mexico">Mexico</option>
+            <option value="netherlands">Netherlands</option>
+            <option value="australia">Australia</option>
+          </select>
         </fieldset>
 
         <button type="submit">submit</button>
       </form>
     </main>
-    <script src="form.js"></script>
   </body>
+  <script src="./vanilla/js/signUp.js"></script>
 </html>
